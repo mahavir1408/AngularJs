@@ -1,0 +1,19 @@
+<!doctype html>
+<html ng-app="myapp">
+<head>
+<script type="text/javascript" src="http://code.angularjs.org/1.4.4/angular.min.js"></script>
+</head>
+<body>
+	<div ng-controller='MyController'>
+		<p>1. <span ng-bind="myData.text"></span></p>
+		<p>2. {{myData.text}}</p>
+	</div>
+	<script type="text/javascript">
+		var myModule = angular.module("myapp",[]).controller("MyController",function ($scope){
+			var myData = {};
+			myData.text = "Text from myData Object";
+			$scope.myData = myData;
+		});
+	</script>
+</body>
+</html>
