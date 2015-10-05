@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hide Show Example</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="http://code.angularjs.org/1.4.7/angular.min.js"></script>
+  </head>
+  <body>
+    <div ng-app="myapp">
+      <div ng-controller="MyController">
+        <p ng-show="myData.showIt"><span ng-bind="myData.showText()"></span></p>
+        <p ng-hide="myData.showIt"><span ng-bind="myData.hideText()"></span></p>
+      </div>
+    </div>
+    <script type="text/javascript">
+      angular.module("myapp",[]).controller("MyController",function($scope){
+        var myData = {};
+        myData.showText = function(){ return "Text from myData using ng-show"; };
+        myData.hideText = function(){ return "Text from myData using ng-hide"; };
+        myData.showIt = false;
+        $scope.myData = myData;
+      });
+    </script>
+  </body>
+</html>
