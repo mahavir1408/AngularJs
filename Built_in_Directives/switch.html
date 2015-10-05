@@ -7,11 +7,17 @@
     <script type="text/javascript" src="http://code.angularjs.org/1.4.7/angular.min.js"></script>
   </head>
   <body>
-    <div>TODO write content</div>
+    <div ng-switch on="myData.switch">
+      <div ng-switch-when="1">This is case1</div>
+      <div ng-switch-when="2">This is case2</div>
+      <div ng-switch-default><p ng-bing="myData.defaultText"></p></div>
+    </div>
     <script type="text/javascript">
       angular.module("myapp",[]).controller("myController",["$scope","$sce",function($scope,$sce){
          var myData = {};
-         myData.case1 = $sce.trustAsHtml("<strong>This is case 1</strong>");        
+         myData.switch = 1;
+         myData.defaultText = $sce.trustAsHtml("<strong>This is default Text</strong>");  
+         $scope.myData = myData;
       }]);
     </script>
   </body>
