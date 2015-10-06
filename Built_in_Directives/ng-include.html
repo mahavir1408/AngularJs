@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>TODO supply a title</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="http://code.angularjs.org/1.4.7/angular.min.js"></script>
+  </head>
+  <body>
+    <div ng-app="myapp">
+      <div ng-controller="myController">
+        <div ng-include="myData.status && 'include1.html'||'include2.html'"></div>        
+      </div>
+    </div>
+    <script type="text/javascript">
+      angular.module("myapp",[]).controller("myController",["$scope",function($scope){
+        var myData = {};
+        myData.status=false;
+        $scope.myData=myData;
+      }]);
+    </script>
+  </body>
+</html>
