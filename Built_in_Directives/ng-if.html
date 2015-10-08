@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Switch Example</title>
+    <title>ng-if Example</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script type="text/javascript" src="http://code.angularjs.org/1.4.7/angular.min.js"></script>
@@ -9,11 +9,7 @@
   <body>
     <div ng-app="myapp">
       <div ng-controller="myController">
-        <div ng-switch on="myData.case">
-          <div ng-switch-when="1">This is case1</div>
-          <div ng-switch-when="2">This is case2</div>
-          <div ng-switch-default><p ng-bind-html="myData.defaultText"></p></div>
-        </div>
+        <div ng-if="myData.case"><span ng-bind-html="myData.defaultText"></span></div>
       </div>
     </div>
     <script type="text/javascript">

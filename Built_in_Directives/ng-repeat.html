@@ -11,7 +11,15 @@
       <div ng-controller="myController">
         Iterating through a JSON
         <ol>
-          <li ng-repeat="i in myData.items | orderBy: 'text'">{{i.text}}</li>
+          <li ng-repeat="i in myData.items | orderBy: 'text'">{{i.text}} (Index is {{$index}})</li>
+        </ol>
+        Iterating through a function
+        <ol>
+          <li ng-repeat="i in myData.getItems() | orderBy: 'text'">{{i.text}} (Is first? {{$first}})</li>
+        </ol>
+        Iterating through a Javascript Array
+        <ol>
+          <li ng-repeat="(k,v) in myData.myArray | orderBy: 'text'">{{k}}={{v}}</li>
         </ol>
       </div>
     </div>
@@ -19,7 +27,9 @@
       angular.module("myapp",[]).controller("myController",["$scope",function($scope){
         var myData = {};
         myData.items = [{text:"one"},{text:"two"},{text:"three"}];
+        myData.getItems =  function(){return this.items;};
         $scope.myData=myData;
+        myData.myArray = {text1:"one",text2:"two",text3:"three"};
       }]);
     </script>
   </body>
