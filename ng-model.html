@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="js/angular.js"></script>
+    <script src="js/ng-model.js"></script>
+  </head>
+  <body ng-app="testApp" ng-controller="user">
+    <div>
+      <p>First Name: <input type="text" ng-model="user.firstname" /></p>
+      <p>Last Name: <input type="text" ng-model="user.lastname" /></p>      
+    </div>
+    <div>
+      <p>First Name: {{user.firstname}}</p>
+      <p>Last Name: {{user.lastname}}</p>      
+    </div>
+  </body>
+</html>

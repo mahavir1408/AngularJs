@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+  <head>
+    <script src="js/angular.min.js"></script>
+  </head>
+  <body>
+    <div ng-controller='HelloController'>
+      <p>Hello {{messages.name}}</p>
+    </div>
+    <script type="text/javascript">      
+      var app = angular.module('myApp', []);
+      app.controller('HelloController',function($scope){
+        var messages = {};
+        messages.name = "Mahavir";
+        $scope.messages = messages;
+      });
+    </script>
+  </body>
+</html>

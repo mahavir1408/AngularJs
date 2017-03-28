@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="js/angular.js"></script>
+    <script src="js/ng-repeat.js"></script>
+  </head>
+  <body ng-app="repeatApp" ng-controller="Users">
+    <div ng-repeat="user in users" style="border-bottom:solid thick;">
+      <p>First Name: {{user.firstname}}</p>
+      <p>Last Name: {{user.lastname}}</p>      
+    </div>
+  </body>
+</html>

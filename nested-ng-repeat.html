@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="js/angular.js"></script>
+    <script src="js/nested-ng-repeat.js"></script>
+  </head>
+  <body ng-app="nestedRepeatApp" ng-controller="Countries">
+    <div ng-repeat="country in countries" style="border-bottom:solid thick;">
+      <ul>
+        <li>
+          {{country.name}}
+          <ul ng-repeat="city in country.cities track by  $index">
+            <li>{{city}} [Parent Index: {{$parent.$index}} | Index: {{$index}}]</li>
+          </ul>
+         </li>        
+      </ul>
+    </div>
+  </body>
+</html>
