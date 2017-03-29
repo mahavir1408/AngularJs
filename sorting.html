@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="js/angular.js"></script>
+    <script src="js/filter.js"></script>
+  </head>
+  <body ng-app="filterApp" ng-controller="Employees">
+    <div style="padding-bottom:10px;"><label>Sort By: </label><input type="number" step="1" min="0" max="5" ng-model="rowLimit" /></div>    
+    <table border="1">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>DOB</th>
+          <th>Gender</th>
+          <th>Salary (number)</th>
+          <th>Salary (currency}})</th>    
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="employee in employees|orderBy: 'name'">
+          <td>{{employee.name|uppercase}}</td>
+          <td>{{employee.dob|date:"dd/MM/yyyy"}}</td>
+          <td>{{employee.gender|lowercase}}</td>
+          <td>{{employee.salary|number:2}}</td>
+          <td>{{employee.salary|currency:"INR ":1}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="js/angular.js"></script>
+    <script src="js/ng-click.js"></script>
+  </head>
+  <body ng-app="ngclickApp" ng-controller="Technologies">
+    <div ng-repeat="technology in technologies" style="border-bottom:solid thick;">
+      <p>Technology: {{technology.name}}</p>
+      <p>Likes: {{technology.likes}} <input type="button" value="Like" ng-click="incrementLikes(technology)" /></p>
+      <p>Dislikes: {{technology.dislikes}} <input type="button" value="DisLike" ng-click="incrementDislikes(technology)" /></p>
+            
+    </div>
+  </body>
+</html>
